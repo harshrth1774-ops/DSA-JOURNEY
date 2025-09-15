@@ -22,7 +22,7 @@ int main()
     s[idx]=current_char;
     idx++;
 
-    //jab mereko mil jayega tab mai values assign karunga lekin problem ye aayegi ki count int type ka hai and usko string mai kaise daalunga and ye bhi ho skta hai ki count maan le 10 hua toh 1 ko alag and 0 ko alag store karana pdega
+    //jab mereko mil jayega tab mai values assign karunga lekin problem ye aayegi ki count int type ka hai and usko string mai kaise daalunga and ye bhi ho skta hai ki count maan le 10 hua toh 1 ko alag and 0 ko alag store karana pdega.
     if(count>1)
     {
       string str=to_string(count);
