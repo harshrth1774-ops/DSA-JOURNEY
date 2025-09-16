@@ -27,10 +27,10 @@ void fun(int N)
 int main()
 {
   
-  int n;
-  cout<<"enter the value of n: ";
-  cin>>n;
-  print(1,n);
+  // int n;
+  // cout<<"enter the value of n: ";
+  // cin>>n;
+  // print(1,n);
   
   int N=5;
   fun(N);
