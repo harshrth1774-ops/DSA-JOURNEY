@@ -1,43 +1,48 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-//merge kaise kre
+
 void merge(int arr[], int start, int mid, int end)
 {
-  vector<int>temp(end-start+1); //temp vector to store values
-  int left=start,right=mid+1,idx=0;
-  while(left<=mid && right<=end)
-  {
-    //jiska array ka element chota hoga uska hi pointer aage bdega
-    if(arr[left]<arr[right])
+    vector<int> temp(end - start + 1);
+    int left = start, right = mid + 1, idx = 0;
+
+    while (left <= mid && right <= end)
     {
-      temp[idx]=arr[left];
-      left++,idx++;
-    }else{       //arr[right]<arr[left]
-      temp[idx]=arr[right];
-      right++,idx++;
+        if (arr[left] <= arr[right])
+            temp[idx++] = arr[left++];
+        else
+            temp[idx++] = arr[right++];
     }
-  }
-  //agar left part mai agar aelement bache hai
-  while(left<=mid)
-  {
-    temp[idx]=arr[left];
-    left++,idx++;
-  }
-  //agar right part mai elements bache 
-  while(right<=end){
-    temp[right]=arr[right];
-    right++,idx++;
-  }
-  //ab mai value temp se arr mai daalta hu
-  idx=0;
-  while(start<=end)
-  {
-    arr[start]=temp[idx];
-    idx++,start++;
-  }
+
+    while (left <= mid)
+        temp[idx++] = arr[left++];
+
+    while (right <= end)
+        temp[idx++] = arr[right++];
+
+    for (int i = 0; i < temp.size(); i++)
+        arr[start + i] = temp[i];
 }
+
+void mergeSort(int arr[], int start, int end)
+{
+    if (start >= end) return;
+
+    int mid = start + (end - start) / 2;
+
+    mergeSort(arr, start, mid);
+    mergeSort(arr, mid + 1, end);
+
+    merge(arr, start, mid, end);
+}
+
 int main()
 {
-  int arr[]={  };
+    int arr[] = {5, 2, 9, 1, 6, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    mergeSort(arr, 0, n - 1);
+
+    return 0;
 }
