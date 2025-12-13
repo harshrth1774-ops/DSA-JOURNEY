@@ -1,0 +1,103 @@
+#include<iostream>
+using namespace std;
+
+class Node{
+  public:
+  int data;
+  Node* prev;
+  Node* next;
+
+  Node(int value){
+    data = value;
+    prev = NULL;
+    next = NULL;
+  }
+}
+class Dequeue{
+  Node* front;
+  Node* rear;
+  public: 
+
+  Dequeue(){
+    front = rear = NULL;
+  }
+  //push front
+  void push_front(int x)
+  {
+    //empty()
+    if(front == NULL){
+      front = rear = NULL;
+    }else{
+      node* temp = new Node(x);
+      temp->next = front;
+      front->prev = temp;
+      front = temp;
+    }
+  }
+  //push back
+  void push_back(int x)
+  {
+    if(front == NULL){
+      return;
+    }else{
+      node* temp =  new node(x);
+      rear->next = temp;
+      temp->prev = rear;
+      rear = temp;
+      return; 
+    }
+  }
+  //pop front
+  void pop_front()
+  {
+    if(front == NULL) return;
+    else{
+      node* temp = front;
+      front = front->next;
+      delete temp;
+      if(front){
+        front->prev = NULL;
+      }else{
+        rear = NULL;
+      }
+    }
+  }
+  //pop back
+  void pop_back(){
+    if(front == NULL) return;
+    else{
+      node* temp = rear;
+      rear = rear->prev;
+      delete temp;
+      if(rear){
+        rear->next = NULL; 
+      }else{
+        front = NULL;
+      }
+    }
+  }
+
+  //start
+  int start()
+  {
+    if(front == NULL) return -1;
+    else{
+      return front->data;
+    }
+  }
+  //end
+  int end()
+  {
+    if(front == NULL) return -1;
+    else{
+      return rear->data;
+    }
+  }
+}
+int main()
+{
+  Dequeue d;
+  d.push_back(5);
+  d.push_front(8);
+  cout<<d.start() <<endl;
+}

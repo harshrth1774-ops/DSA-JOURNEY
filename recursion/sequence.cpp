@@ -11,7 +11,6 @@ void sequence(int arr[], int idx, int n, vector<int>&temp, vector<vector<int>>&a
   sequence(arr,idx+1,n,temp,ans);
   //yes
   temp.push_back(arr[idx]); 
-
    sequence(arr,idx+1,n,temp,ans);
 }
 using namespace std;
@@ -26,6 +25,7 @@ int main()
   
   //printing
   for(int i=0; i<ans.size(); i++){
+    
     for(int j = 0; j<ans[i].size(); j++){
       cout<<ans[i][j] <<" ";
     }
