@@ -15,6 +15,7 @@ public:
    int ans = -1;
 
     void inOrder(TreeNode* root, int& k){
+      
         if(root == NULL) return;
 
         inOrder(root->left,k);
