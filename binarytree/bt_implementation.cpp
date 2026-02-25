@@ -4,39 +4,43 @@ using namespace std;
 
 class Node{
   public:
+  
   int data;
   Node* left,*right;
 
   Node(int val){
     data = val;
-    left = right = NULL;
+    left = NULL;
+    right = NULL;
   }
 };
+
 int main()
 {
-  int x; cin>>x;
-  int first, second;
-
   queue<Node*>q;
+
+  int x; cin>>x;
+  int first,second;
 
   Node* root = new Node(x);
   q.push(root);
 
-  while(!q.empty())
-  {
+  while(!q.empty()){
+
     Node* temp = q.front();
     q.pop();
 
-    cin>>left;
+    cin>>first;
     if(first != -1){
       temp->left = new Node(first);
-      q.push(temp->left);
+          q.push(temp->left);
     }
 
-    cin>>right;
+    cin>>second;
     if(second != -1){
-      temp->right = new Node(second);
+      temp->right  = new Node(second);
       q.push(temp->right);
     }
   }
+
 }
