@@ -17,16 +17,15 @@ int main(){
       for(int i = 0; i<n; i++)
       cin>>arr[i];
 
-      map<int,int>mp;
+      set<int>st;
       for(int i = 0; i<n; i++){
-        mp[arr[i]]++;
+        st.insert(arr[i]);
       }
 
-      if(mp.size() == 1){
+      if(st.size() == 1){
         cout<<-1 <<endl;
         continue;
       }
-      
       int maxi = *max_element(arr.begin(),arr.end());
 
       vector<int>b;
@@ -40,7 +39,7 @@ int main(){
         }
       }
 
-      cout<<b.size() <<" " <<c.size();
+      cout<<b.size() <<" " <<c.size() <<endl;
 
       for(int i = 0; i<b.size(); i++){
         cout<<b[i] <<" ";
@@ -48,6 +47,8 @@ int main(){
       cout<<endl;
       for(int i = 0; i<c.size(); i++){
         cout<<c[i] <<" ";
+
+        
       }
       cout<<endl;
     }
