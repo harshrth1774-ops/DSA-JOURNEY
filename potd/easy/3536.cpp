@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int maxProduct(int n) {
+        
+        int first = 0;
+        int second = 0;
+
+        while(n){
+
+            int x = n % 10;
+
+            if(x >= first){
+
+                second = first;
+                first = x;
+            }else if(x < first && x > second){
+                second = x;
+            }
+
+            n = n / 10;
+        }
+        return first  * second;
+    }
+};
