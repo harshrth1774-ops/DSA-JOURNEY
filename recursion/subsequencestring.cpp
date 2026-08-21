@@ -1,28 +1,32 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-void sequence(string s, int idx, int size, string &temp, vector<string>&ans)
-{
-  //base case
-  if(idx == size){
+
+void subsequence(vector<string>& ans,string s, int idx, int n, string temp){
+
+  if(idx == n){
     ans.push_back(temp);
     return;
   }
   //not included
-  sequence(s, idx+1, size, temp,ans);
-  //included
+  subsequence(ans,s,idx+1,n,temp);
+
+  //include
   temp.push_back(s[idx]);
-  sequence(s,idx+1,size,temp,ans);
-  temp.pop_back(); 
-  
+  subsequence(ans,s,idx+1,n,temp);
 }
-int main()
-{
-  string s = "abcd";
+int main(){
+  
+  string s = "abc";
+  int n = s.size();
   string temp;
   vector<string>ans;
-  sequence(s,0, s.size(), temp, ans);
-  for(int i=0; i<ans.size(); i++)
-  cout<<ans[i] <<endl;
+
+  subsequence(ans,s,0,n,temp);
+    
+  for(int i = 0; i<ans.size(); i++){
+    cout<<ans[i] <<endl;
+  }
+
+    return 0;
 }
+
