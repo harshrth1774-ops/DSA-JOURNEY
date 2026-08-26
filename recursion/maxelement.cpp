@@ -14,3 +14,13 @@ int main()
   int n=5;
   cout<<maxElement(arr,idx,n);
 }
+
+fun(arr,i,max){
+
+  if(i > arr.size()) return;
+
+  if(arr[i] > max){
+    max = arr[i];
+  }
+  fun(arr,i+1,max);
+}
