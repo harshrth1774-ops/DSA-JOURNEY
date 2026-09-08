@@ -21,3 +21,40 @@ int main(){
     cout<<sum;
     return 0;
 }
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int countKConstraintSubstrings(string s, int k) {
+        int n = s.size();
+        int ans = 0;
+
+        for (int r = 0; r < n; r++) {
+
+            int score = 0;
+
+            for (int i = 0; i < n - 1; i++) {
+                if (s[i] == s[i + 1]) {
+                    score++;
+                }
+            }
+
+            if (score == k) {
+                ans++;
+            }
+
+            // Rotate left by 1
+            char first = s[0];
+
+            for (int i = 0; i < n - 1; i++) {
+                s[i] = s[i + 1];
+            }
+
+            s[n - 1] = first;
+        }
+
+        return ans;
+    }
+};
