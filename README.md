@@ -5,4 +5,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1291-sequential-digits](https://github.com/harshrth1774-ops/DSA-JOURNEY/tree/master/1291-sequential-digits) |
+## Array
+|  |
+| ------- |
+| [3525-find-x-value-of-array-ii](https://github.com/harshrth1774-ops/DSA-JOURNEY/tree/master/3525-find-x-value-of-array-ii) |
+## Math
+|  |
+| ------- |
+| [3525-find-x-value-of-array-ii](https://github.com/harshrth1774-ops/DSA-JOURNEY/tree/master/3525-find-x-value-of-array-ii) |
+## Segment Tree
+|  |
+| ------- |
+| [3525-find-x-value-of-array-ii](https://github.com/harshrth1774-ops/DSA-JOURNEY/tree/master/3525-find-x-value-of-array-ii) |
 <!---LeetCode Topics End-->
