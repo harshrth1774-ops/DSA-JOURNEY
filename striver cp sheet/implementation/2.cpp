@@ -1,20 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    vector<string>arr= {"apple", "google", "tesla"};
+    
+    long long x;
+    cin>>x;
 
-    sort(arr.begin(), arr.end(), [](string a, string b){
+    if(x >=0 && x <=4){
+      cout<<x <<endl;
+      return 0;
+    }
+    string s = to_string(x);
+    
+    long long maxi = INT_MIN;
+    for(int i = 0; i<s.size(); i++){
 
-      return a.size() < b.size();
-    });
+      long long num = s[i] - '0';
 
-  for(string s : arr)
-  cout<<s <<" ";
+      maxi = max(maxi, num);
+    }
+
+    for(int i = 0; i<s.size(); i++){
+
+      long long num = s[i] - '0';
+
+      if(num == maxi){
+        s[i]  = 9 - (s[i] - '0') + '0';
+      }
+    }
+    long long ans = stoll(s);
+
+    cout<<ans <<endl;
     return 0;
 }
