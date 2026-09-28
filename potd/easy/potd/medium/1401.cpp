@@ -1,0 +1,34 @@
+#include <cmath>
+using namespace std;
+
+class Solution {
+public:
+    bool checkOverlap(int radius, int xCenter, int yCenter, int x1, int y1, int x2, int y2) {
+
+        int xi;
+        int yi;
+
+        if(x1 > xCenter) xi = x1;
+        else if(x2 < xCenter) xi = x2;
+        else xi = xCenter;
+
+        if(y1 > yCenter) yi = y1;
+        else if(y2 < yCenter) yi = y2;
+        else yi = yCenter;
+
+        int dx = xi - xCenter;
+        int dy = yi - yCenter;
+
+        if(sqrt(dx * dx + dy * dy) <= radius) return true;
+
+        return false;
+    }
+};
+
+/*
+Time Complexity: O(1)
+- We perform a fixed number of comparisons and calculations.
+
+Space Complexity: O(1)
+- Only a few integer variables are used.
+*/

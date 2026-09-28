@@ -18,13 +18,12 @@ int main(){
 
       if(num >=5 && num <=9){
 
-         int digit = 9 - num;
-
+         int digit = 9 - (s[i] - '0') + '0';
          s[i] = digit + '0';
 
       }
     }
-    long long ans = stoll(s);
+    long long ans = stoi(s);
     cout<<ans <<endl;
 
     return 0;
